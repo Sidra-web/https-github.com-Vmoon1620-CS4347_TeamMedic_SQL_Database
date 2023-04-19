@@ -4766,7 +4766,7 @@ insert into Services (DateOfService, TimeOfService) values ('2022-05-30', '19:31
 
 /*
 Next I will be doing Consultation
-NOTE: Consultation's Primary Key will range from 1-201
+NOTE: Consultation's Primary Key will range from 1-200
 */
 
 /* This creates the Specialization Table 'Consultation' */
@@ -4992,6 +4992,21 @@ insert into Consultation (InstructionforMedication, PrescribedMedications) value
 NOTE Prescription primary key will begin at 201 and end with 400
 */
 
+/* This creates the Specialization Table 'Prescription' */
+CREATE TABLE Prescription( 
+    SKey INT NOT NULL AUTO_INCREMENT, 
+    RxNumber VARCHAR(20), 
+    NameOfPrescription VARCHAR(150), 
+    Quantity INT , 
+    Duration VARCHAR(150), 
+    PRIMARY Key (SKey), 
+    FOREIGN Key (SKey) References Services (SKey) 
+); 
+
+/*
+I will be using Mockaroo for this portion
+RxNumber, NameOfPrescription, Quantity, Duration
+*/
 
 -- [Prescription INSERT VALUES]
 -- @block
