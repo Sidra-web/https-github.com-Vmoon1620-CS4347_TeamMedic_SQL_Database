@@ -4128,7 +4128,7 @@ CREATE TABLE HP_Titles(
 
 /*
 Assumption: only 200 titles: a health professional alrrady has a deafult title, 
-and we are showing an extra ttile that the health professional has attached to their name.
+and we are showing that all the health professionals have an extra title attached to their name.
 -> 200/3 = 65 entries for each health professional
 */
 
