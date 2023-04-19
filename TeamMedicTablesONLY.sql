@@ -243,7 +243,7 @@ CREATE TABLE SelfPay(
 /* This creates the Multi-Valued Attributes table 'SP_PayMethod' */
 CREATE TABLE SP_PayMethod( 
     PayKey INT NOT NULL AUTO_INCREMENT, 
-    SPpaymethod VARCHAR(80), 
+    SPpaymethod INT, 
     PaymentMethod VARCHAR(80), 
     PRIMARY Key (PayKey,SPpaymethod)
 ); 
