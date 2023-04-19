@@ -2795,9 +2795,10 @@ I am also going to assume that its possible for a patient to have 1 or more dise
     INSERT INTO PatientRecord(FK_Patient,Disease,InheritedDisease) VALUES (198,'Other diseases:  Bird flu',1);
     INSERT INTO PatientRecord(FK_Patient,Disease,InheritedDisease) VALUES (199,'Brain disease: Dementia',0);
     INSERT INTO PatientRecord(FK_Patient,Disease,InheritedDisease) VALUES (200,NULL,0);
+    
 
-        
 /* (Areeba will do this one) 
+    PR_Allergies
 HealthProfessionals
     HP_titles (multi-valued attributes)
     Doctor
@@ -2805,7 +2806,327 @@ HealthProfessionals
     Pharmacist
 */
 
+/* This creates the STRONG ENTITY Table 'PR_Allergies' */
 -- @block
+CREATE table PR_Allergies (
+    Pkey INT NOT NULL,
+    Pallergies VARCHAR (50), 
+    PRIMARY Key (Pkey, Pallergies )
+);
+
+/*     
+I will be using Mockaroo for all tables
+https://www.mockaroo.com/ 
+*/
+
+
+-- @block
+-- [PR_Allergies INSERT VALUES]
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (1,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (1,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (2,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (2,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (3,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (3,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (4,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (4,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (5,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (5,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (6,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (6,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (7,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (7,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (8,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (8,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (9,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (9,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (10,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (10,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (11,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (11,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (12,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (12,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (13,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (13,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (14,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (14,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (15,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (15,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (16,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (16,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (17,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (17,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (18,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (18,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (19,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (19,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (20,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (20,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (21,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (21,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (22,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (22,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (23,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (23,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (24,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (24,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (25,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (25,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (26,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (26,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (27,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (27,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (28,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (28,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (29,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (29,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (30,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (30,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (31,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (31,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (32,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (32,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (33,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (33,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (34,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (34,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (35,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (35,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (36,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (36,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (37,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (37,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (38,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (38,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (39,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (39,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (40,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (40,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (41,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (41,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (42,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (42,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (43,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (43,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (44,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (44,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (45,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (45,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (46,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (46,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (47,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (47,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (48,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (48,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (49,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (49,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (50,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (50,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (51,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (51,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (52,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (52,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (53,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (53,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (54,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (54,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (55,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (55,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (56,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (56,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (57,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (57,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (58,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (58,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (59,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (59,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (60,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (60,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (61,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (61,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (62,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (62,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (63,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (63,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (64,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (64,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (65,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (65,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (66,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (66,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (67,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (67,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (68,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (68,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (69,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (69,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (70,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (70,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (71,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (71,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (72,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (72,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (73,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (73,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (74,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (74,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (75,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (75,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (76,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (76,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (77,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (77,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (78,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (78,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (79,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (79,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (80,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (80,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (81,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (81,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (82,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (82,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (83,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (83,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (84,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (84,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (85,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (85,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (86,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (86,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (87,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (87,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (88,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (88,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (89,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (89,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (90,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (90,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (91,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (91,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (92,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (92,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (93,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (93,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (94,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (94,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (95,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (95,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (96,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (96,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (97,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (97,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (98,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (98,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (99,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (99,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (100,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (100,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (101,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (102,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (103,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (104,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (105,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (106,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (107,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (108,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (109,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (110,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (111,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (112,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (113,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (114,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (115,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (116,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (117,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (118,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (119,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (120,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (121,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (122,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (123,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (124,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (125,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (126,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (127,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (128,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (129,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (130,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (131,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (132,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (133,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (134,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (135,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (136,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (137,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (138,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (139,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (140,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (141,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (142,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (143,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (144,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (145,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (146,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (147,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (148,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (149,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (150,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (151,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (152,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (153,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (154,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (155,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (156,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (157,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (158,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (159,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (160,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (161,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (162,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (163,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (164,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (165,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (166,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (167,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (168,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (169,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (170,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (171,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (172,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (173,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (174,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (175,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (176,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (177,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (178,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (179,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (180,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (181,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (182,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (183,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (184,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (185,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (186,'Milk');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (187,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (188,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (189,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (190,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (191,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (192,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (193,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (194,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (195,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (196,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (197,'Peanut');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (198,'Fish');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (199,'NULL');
+INSERT INTO PR_Allergies(Pkey,Pallergies) VALUES (200,'Milk');
+
+select * from PR_Allergies
+
+        
+
 /* This creates the STRONG ENTITY Table 'HealthProfessionals' */
 -- @block
 CREATE TABLE HealthProfessionals(
