@@ -4477,6 +4477,10 @@ Goal is to populate 600 enties for services such that it can have enough data to
 satistfy its class latice
 I will be using Mockaroo for this portion
 https://www.mockaroo.com/ 
+
+Assumptions:
+DateOfService(Date):FORMAT: YYYY-MM-DD
+TimeOfService(Time):FORMAT: HHMMSS(in 24 hour)
 */
 
 
@@ -5101,7 +5105,9 @@ CREATE TABLE Consultation(
 
 /*
 I will be using mockaroo to populate this table with 200 records
-Instruction for medication, Prescribed medication
+Assumptions:
+Instruction for medication(String): We assume two options take medication with food or without food.
+Prescribed medication(String):Randomly generate Drug names.
 */
 
 -- [Consultation INSERT VALUES]
