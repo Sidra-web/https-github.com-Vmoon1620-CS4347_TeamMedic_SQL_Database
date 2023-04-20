@@ -5563,7 +5563,13 @@ CREATE TABLE Vaccination(
 
 /*
 I will be using Mockaroo for this portion
-Covid, Tuberculosis, Shingrix, Pneumococcal, Flu
+Assumption:
+Using Boolean (True / False):
+Covid
+Tuberculosis
+Shingrix
+Pneumococcal
+Flu
 */
 
 -- [Vaccination INSERT VALUES]
