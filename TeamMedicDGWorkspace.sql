@@ -5309,8 +5309,8 @@ insert into Consultation (InstructionforMedication, PrescribedMedications) value
  
 
 
-/* Next I will populate Prescription with 200 records.
-NOTE Prescription primary key will begin at 201 and end with 400
+/* Next I will populate Prescription with 200 records
+NOTE: Prescription primary key will begin at 201 and end with 400
 */
 
 /* This creates the Specialization Table 'Prescription' */
@@ -5531,3 +5531,229 @@ insert into Prescription (RxNumber, NameOfPrescription, Quantity, Duration) valu
 insert into Prescription (RxNumber, NameOfPrescription, Quantity, Duration) values ('S1092XA', 'Glimepiride', '2363', 'Monthly'); 
 insert into Prescription (RxNumber, NameOfPrescription, Quantity, Duration) values ('W362XXS', 'Aluminum Sesquichlorohydrate', '404', 'Daily'); 
 insert into Prescription (RxNumber, NameOfPrescription, Quantity, Duration) values ('S06344D', 'Levetiracetam', '5696', 'Once'); 
+
+
+/* Next I will populate Vaccination with 200 records
+NOTE: Vaccination primary key will begin at 401 and end with 600
+*/
+
+/* This creates the Specialization Table 'Vaccination' */
+CREATE TABLE Vaccination( 
+    SKey INT NOT NULL AUTO_INCREMENT, 
+    Covid BOOLEAN, 
+    Tuberculosis BOOLEAN, 
+    Shingrix BOOLEAN, 
+    Pneumococcal BOOLEAN, 
+    Flu BOOLEAN, 
+    PRIMARY Key (SKey), 
+    FOREIGN Key (SKey) References Services (SKey) 
+); 
+
+/*
+I will be using Mockaroo for this portion
+Covid, Tuberculosis, Shingrix, Pneumococcal, Flu
+*/
+
+-- [Prescription INSERT VALUES]
+-- @block
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, false, false, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, true, true, false, false); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (true, true, true, false, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, true); 
+insert into Vaccination (Covid, Tuberculosis, Shingrix, Pneumococcal, Flu) values (false, false, false, true, true); 
+ 
