@@ -5783,6 +5783,11 @@ Goal is to populate 600 enties for Payment such that it can have enough data to
 satistfy its class latice       
 I will be using Mockaroo for all tables
 https://www.mockaroo.com/ 
+
+Assumption:
+Amount(Decimal): Amount charged on patient randomly generate number with two decimal places.
+FK_Patient(Int): generated random numbers.
+
 */
 
 -- [Payment INSERT VALUES]
@@ -6404,6 +6409,15 @@ CREATE TABLE Insurance(
     PRIMARY Key (PayKey), 
     FOREIGN Key (PayKey) References Payment (PayKey) 
 ); 
+/*
+I will be using Mockaroo
+https://www.mockaroo.com/ 
+Assumpions:
+PhoneNumber(String): randomly generate phone number
+InsuranceType(String):Randomly generated value and changes it using replace command in MS Word
+NameOfInsurance(String):Randomly generated value and changes it using replace command in MS Word
+AmountOff(deciaml):randomly generate number with two decimal places.
+*/
 
 
 -- [Insurance INSERT VALUES]
