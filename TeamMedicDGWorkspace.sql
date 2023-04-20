@@ -5102,6 +5102,9 @@ CREATE TABLE Consultation(
 
 /*
 I will be using mockaroo to populate this table with 200 records
+Assumptions:
+InstructionforMedicatistringon(String): has two option with food or without food
+PrescribedMedications(): Drugs names geneted randomly 
 */
 
 -- @block 
@@ -5326,7 +5329,11 @@ CREATE TABLE Prescription(
 
 /*
 I will be using Mockaroo for this portion
-RxNumber, NameOfPrescription, Quantity, Duration
+Assumptions:
+RxNumber(String):combination of Letters and numbers.
+NameOfPrescription(String): Randomly generated Drug names.
+Quantity(Int): The Number of pills for the Name of Prescription.
+Duration(String):For how long medication needs to taken.
 */
 
 -- [Prescription INSERT VALUES]
