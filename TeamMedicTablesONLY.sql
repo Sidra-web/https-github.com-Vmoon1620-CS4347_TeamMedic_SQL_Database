@@ -60,7 +60,7 @@ CREATE TABLE DeathCertificate(
 CREATE TABLE PatientRecord(
     FK_Patient INT NOT NULL AUTO_INCREMENT,
     Disease VARCHAR (120),
-    RecordOfVaccines VARCHAR(120),
+    InheritedDisease Boolean,
     PRIMARY KEY (FK_Patient),   
     FOREIGN Key (FK_Patient) References Patient (Pkey)
 );
