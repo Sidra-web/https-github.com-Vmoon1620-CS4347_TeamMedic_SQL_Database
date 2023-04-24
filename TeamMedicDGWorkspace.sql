@@ -5034,6 +5034,8 @@ CREATE TABLE Pharmacist(
 
 select * from pharmacist;
 
+
+
 -- [Pharmacist INSERT VALUES]
 -- @block
 INSERT INTO Pharmacist(HPKey,Clinical,Retail) VALUES (402,false,true);
@@ -5249,6 +5251,15 @@ CREATE TABLE HP_Titles(
     HPtitles VARCHAR (80) NOT NULL, 
     PRIMARY Key (HPKey, HPtitles)
 ); 
+
+/*
+
+Assumption: All health professioanls have a deafault title,
+            and these titles in HP_Titles are extra titles for those health professionals.
+            200/3 = 65 titles for each health professioanl subset (doctor, nurse, pharmacist)
+
+*/
+
 
 select * from HP_Titles;
 
