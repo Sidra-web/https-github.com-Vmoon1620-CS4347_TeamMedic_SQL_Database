@@ -1,4 +1,4 @@
-/* (Josh will do this one) 
+/*
 Institution (1-600) 
     Hospital (1-200) 
     Clinic (200-400) 
@@ -3602,7 +3602,7 @@ INSERT INTO PatientRecord(FK_Patient,Disease,InheritedDisease) VALUES (600,'Skin
 
     
 
-/* (Areeba will do this one) 
+/*  
     PR_Allergies
 HealthProfessionals
     HP_titles (multi-valued attributes)
@@ -6123,7 +6123,7 @@ INSERT INTO HP_Titles(HPKey,HPtitles) VALUES (200,'DPM');
 
 
 
-/* (Shafaq and Sidra will do this one)
+/* 
 Services  
     Consultation 
     Prescription 
