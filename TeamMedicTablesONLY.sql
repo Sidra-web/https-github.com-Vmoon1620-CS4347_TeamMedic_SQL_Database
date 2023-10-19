@@ -1,249 +1,107 @@
-
-/* This creates the STRONG ENTITY Table'Institution' */
-CREATE TABLE Institution(
-    IKey INT NOT NULL AUTO_INCREMENT,
-    AddressOfInstitution VARCHAR(80),
-    VitalCheckUp VARCHAR(80),
-    NameOfInstitution VARCHAR(80), 
-    PRIMARY Key (IKey)
+Create Table Customer(
+    CustomerID CHAR(36) Not Null,
+     FirstName VARCHAR(50),
+     LastName VARCHAR(50),
+     DateOfBirth DATE,
+     SSN CHAR (11),
+     PRIMARY Key (CustomerID)
 );
 
-/* This creates the STRONG ENTITY Table 'Patient' */
-CREATE TABLE Patient(
-    Pkey INT NOT NULL AUTO_INCREMENT,
-    Fname VARCHAR(50),
-    Lname VARCHAR(50),
-    DOB Date, /* FORMAT: YYYY-MM-DD */
-    AddressOfPatient VARCHAR(80),
-    PRIMARY KEY (Pkey)
+Create Table Customer_Address(
+    /* this is going to be the same UUID from Customer.CustomerID */
+    FK_CustomerAddress CHAR(36) Not Null, 
+    CustomerAddress VARCHAR(80),
+    AddressType VARCHAR(50),
+    /* since this is multivalue attribute we have the Primary key as follows */
+    PRIMARY Key (FK_CustomerAddress, CustomerAddress), 
+    Foreign Key (FK_CustomerAddress) References Customer (CustomerID) 
 );
 
-/* This creates the STRONG ENTITY Table 'HealthProfessionals' */
-CREATE TABLE HealthProfessionals(
-    HPKey INT NOT NULL AUTO_INCREMENT,
-    Fname VARCHAR(50),
-    Lname VARCHAR(50),
-    License VARCHAR(80),
-    PRIMARY KEY (HPkey)
+CREATE Table Customer_PhoneNumber(
+    /* This is going to be the same UUID from Customer.CustomerID */
+    FK_CustomerPhoneNumber CHAR(36) Not Null,
+    PhoneNumber VARCHAR(50),
+    PhoneNumberType VARCHAR(50),
+    /* Similarly bc this table is multivalued, it has two attributes tied for its primary keys */
+    PRIMARY Key (FK_CustomerPhoneNumber, PhoneNumber), 
+    Foreign Key (FK_CustomerPhoneNumber) References Customer (CustomerID) 
+
 );
 
-/* This creates the STRONG ENTITY Table 'Services' */
-CREATE TABLE Services(
-    SKey INT NOT NULL AUTO_INCREMENT,
-    DateOfService DATE,
-    TimeOfService TIME,
-    PRIMARY KEY (SKey)
+Create Table Accounts(
+    /* this is unique uuid to follow the format */
+    AccountID CHAR(36) Not Null,
+    FK_CustomerID CHAR(36), 
+    /* this is going to be the same UUID from Customer.CustomerID */
+    AccountBalance FLOAT,
+    AccountType VARCHAR(50),
+    /* Also made this change since its also a multivariate. Logic is a customer can have multiple accounts*/
+    PRIMARY Key (AccountID, AccountType), 
+    Foreign Key (FK_CustomerID) References Customer(CustomerID)
 );
 
-/* This creates the STRONG ENTITY Table 'Payment' */
-CREATE TABLE Payment(
-    PayKey INT NOT NULL AUTO_INCREMENT,
-    Amount DECIMAL(6,2), 
-    FK_Patient INT,
-    PRIMARY KEY (PayKey),
-    FOREIGN Key (FK_Patient) References Patient (Pkey)
+Create Table Transactions(
+    /* unique uuid */
+    TranscationID CHAR(36) Not Null,
+    /* this will be exactly the same as account.accountID */
+    FK_AccountID CHAR(36),
+    TranscationTime TIME,
+    TranscationDate DATE,
+    TransactionType VARCHAR(50),
+    TranscationAmount FLOAT,
+    /* Note that is Primary Key is made from a double attribute */
+    PRIMARY Key (TranscationID,TransactionType),
+    Foreign Key (FK_AccountID) References Accounts(AccountID)
 );
 
-/* This creates the WEAK ENTITY Table 'DeathCertificate' */
-CREATE TABLE DeathCertificate(
-    FK_Patient INT NOT NULL AUTO_INCREMENT,
-    Location VARCHAR(80),
-    CauseOfDeath VARCHAR(80),
-    Owns_Pkey INT, 
-    DateOfDeath DATE, 
-    TimeOfDeath TIME, 
-    PRIMARY KEY (FK_Patient),   
-    FOREIGN Key (Owns_Pkey) References Patient (Pkey)
+CREATE TABLE Users (
+    /* this record is new to follow the formatting of the other tables */
+    UserID CHAR(36) Not Null, 
+    UserLogin VARCHAR(50),
+    UserPassword VARCHAR(50),
+    /*this is going to be the same UUID from customer.CustomerID */
+    FK_CustomerID CHAR(36),
+    UserType VARCHAR(10),
+    PRIMARY Key (UserID),
+    Foreign Key (FK_CustomerID) References Customer (CustomerID)
 );
 
-/* This creates the WEAK ENTITY Table 'PatientRecord' */
-CREATE TABLE PatientRecord(
-    FK_Patient INT NOT NULL AUTO_INCREMENT,
-    Disease VARCHAR (120),
-    InheritedDisease Boolean,
-    PRIMARY KEY (FK_Patient),   
-    FOREIGN Key (FK_Patient) References Patient (Pkey)
-);
+/*
+If I am an admin I would have
+    - UserID
+    - FirstName
+    - LastName
+    - Username
+    - Password
 
-/* This creates the M:N Table 'Visit' */
-CREATE TABLE Visit (
-    PatientKey INT NOT NULl, 
-    InstitutionKey INT NOT NULL,
-    PRIMARY Key (PatientKey, InstitutionKey)
-);
-
-/* This creates the M:N Table 'Authorize' */
-CREATE TABLE Authorize (
-    InstitutionKey INT NOT NULL,
-    PatientKey INT NOT NULl, 
-    PRIMARY Key (InstitutionKey, PatientKey)
-);
-
-/* This creates the M:N Table 'ConsistOf' */
-CREATE TABLE ConsistOf (
-    InstitutionKey INT NOT NULL,
-    HealthKey INT NOT NULl, 
-    PRIMARY Key (InstitutionKey, HealthKey)
-);
-
-/* This creates the M:N Table 'LookUp' */
-CREATE TABLE LookUp (
-    PatientKey INT NOT NULL,
-    ServicesKey INT NOT NULl, 
-    PRIMARY Key (PatientKey, ServicesKey)
-);
-
-/* This creates the M:N Table 'Provides' */
-CREATE TABLE Provides (
-    InstitutionKey INT NOT NULL,
-    ServicesKey INT NOT NULl, 
-    PRIMARY Key (InstitutionKey, ServicesKey)
-);
-
-/* This creates the Multi-Valued Attribute Table 'Pat_PhoneNums' */
-CREATE table Pat_PhoneNums (
-    Pkey INT NOT NULL,
-    Pphonenumbers VARCHAR (50), 
-    PRIMARY Key (Pkey, Pphonenumbers)
-);
-
-/* This creates the Multi-Valued Attribute Table 'PR_Allergies' */
-CREATE table PR_Allergies (
-    Pkey INT NOT NULL,
-    Pallergies VARCHAR (50), 
-    PRIMARY Key (Pkey, Pallergies )
-);
-
-/* This creates the Specialization Table 'Doctor' */
-CREATE TABLE Doctor(
-    HPKey INT NOT NULL AUTO_INCREMENT,
-    Surgeon BOOLEAN,
-    Physician BOOLEAN,
-    PRIMARY Key (HPKey),
-    FOREIGN Key (HPKey) References Health Professionals (HPKey)
-);
-
-/* This creates the Specialization Table 'Nurse' */
-CREATE TABLE Nurse( 
-    HPKey INT NOT NULL AUTO_INCREMENT, 
-    NursePractitioner BOOLEAN, 
-    CriticalCare BOOLEAN, 
-    Oncology BOOLEAN, 
-    PRIMARY Key (HPKey), 
-    FOREIGN Key (HPKey) References HealthProfessionals (HPKey) 
-); 
-
-/* This creates the Specialization Table 'Pharmacist' */
-CREATE TABLE Pharmacist( 
-    HPKey INT NOT NULL AUTO_INCREMENT, 
-    Clinical BOOLEAN, 
-    Retail BOOLEAN, 
-    PRIMARY Key (HPKey), 
-    FOREIGN Key (HPKey) References HealthProfessionals (HPKey) 
-); 
-
-/* This creates the Multi-Valued Attributes Table 'HP_Titles' */
-CREATE TABLE HP_Titles(
-    HPKey INT NOT NULL, 
-    HPtitles VARCHAR (80) NOT NULL, 
-    PRIMARY Key (HPKey, HPtitles)
-); 
-
-/* This creates the Specialization Table 'Hospital' */
-CREATE TABLE Hospital( 
-    IKey INT NOT NULL AUTO_INCREMENT, 
-    InOutPatient BOOLEAN,   
-    ICU BOOLEAN, 
-    Labs BOOLEAN, 
-    EmergencyRoom BOOLEAN, 
-    PRIMARY Key (IKey), 
-    FOREIGN Key (IKey) References Institution (Ikey) 
-); 
-
-/* This creates the Specialization Table 'Clinic' */
-CREATE TABLE Clinic( 
-    IKey INT NOT NULL AUTO_INCREMENT, 
-    Labs BOOLEAN, 
-    UrgentCare BOOLEAN, 
-    PRIMARY Key (IKey), 
-    FOREIGN Key (IKey) References Institution (Ikey) 
-); 
-
-/* This creates the Specialization Table 'Pharmacy' */
-CREATE TABLE Pharmacy( 
-    IKey INT NOT NULL AUTO_INCREMENT, 
-    PrescribedMedication VARCHAR (120), 
-    OvertheCounterMedication VARCHAR (120), 
-    PRIMARY Key (IKey), 
-    FOREIGN Key (IKey) References Institution (Ikey) 
-); 
-
- /* This creates the Specialization Table 'Consultation' */
-CREATE TABLE Consultation( 
-    SKey INT NOT NULL AUTO_INCREMENT, 
-    InstructionforMedication VARCHAR(80), 
-    PrescribedMedications VARCHAR(80), 
-    PRIMARY Key (SKey), 
-    FOREIGN Key (SKey) References Services (SKey) 
-); 
-
- /* This creates the Specialization Table 'Prescription' */
-CREATE TABLE Prescription( 
-    SKey INT NOT NULL AUTO_INCREMENT, 
-    RxNumber VARCHAR(20), 
-    NameOfPrescription VARCHAR(150), 
-    Quantity INT , 
-    Duration VARCHAR(150), 
-    PRIMARY Key (SKey), 
-    FOREIGN Key (SKey) References Services (SKey) 
-); 
-
- /* This creates the Specialization Table 'Vaccination' */
-CREATE TABLE Vaccination( 
-    SKey INT NOT NULL AUTO_INCREMENT, 
-    Covid BOOLEAN, 
-    Tuberculosis BOOLEAN, 
-    Shingrix BOOLEAN, 
-    Pneumococcal BOOLEAN, 
-    Flu BOOLEAN, 
-    PRIMARY Key (SKey), 
-    FOREIGN Key (SKey) References Services (SKey) 
-); 
-
- /* This creates the Specialization Table 'Insurance' */
-CREATE TABLE Insurance( 
-    PayKey INT NOT NULL AUTO_INCREMENT, 
-    PhoneNumber VARCHAR(80), 
-    InsuranceType VARCHAR(80), 
-    NameOfInsurance VARCHAR(80), 
-    AmountOff DECIMAL(4,2), 
-    PRIMARY Key (PayKey), 
-    FOREIGN Key (PayKey) References Payment (PayKey) 
-); 
-
- /* This creates the Specialization Table 'RxCoupons' */
-CREATE TABLE RxCoupons( 
-    PayKey INT NOT NULL AUTO_INCREMENT, 
-    Validity BOOLEAN, 
-    AmountOff DECIMAL(4,2), 
-    PRIMARY Key (PayKey), 
-    FOREIGN Key (PayKey) References Payment (PayKey) 
-); 
-
-
-/* This creates the Specialization Table 'SelfPay' */
-CREATE TABLE SelfPay( 
-    PayKey INT NOT NULL AUTO_INCREMENT, 
-    AmountToPay DECIMAL(6,2), 
-    PaymentMethod VARCHAR(80) ,
-    PRIMARY Key (PayKey), 
-    FOREIGN Key (PayKey) References Payment (PayKey) 
-); 
-
-/* This creates the Multi-Valued Attributes table 'SP_PayMethod' */
-CREATE TABLE SP_PayMethod( 
-    PayKey INT NOT NULL AUTO_INCREMENT, 
-    SPpaymethod  VARCHAR(80), 
-    PRIMARY Key (PayKey,SPpaymethod)
-); 
-
+*/
+SELECT 
+    Customer.CustomerID,
+    Customer.FirstName,
+    Customer.LastName,
+    Customer.DateOfBirth,
+    Customer.SSN,
+    Customer_Address.CustomerAddress,
+    Customer_Address.AddressType,
+    Customer_PhoneNumber.PhoneNumber,
+    Customer_PhoneNumber.PhoneNumberType,
+    Users.UserLogin,
+    Users.UserPassword,
+    Accounts.AccountBalance,
+    Accounts.AccountType,
+    Transactions.TranscationTime, 
+    Transactions.TranscationDate, 
+    Transactions.TransactionType, 
+    Transactions.TranscationAmount
+FROM 
+    Customer
+JOIN 
+    Customer_Address ON Customer.CustomerID = Customer_Address.FK_CustomerAddress
+JOIN 
+    Customer_PhoneNumber ON Customer.CustomerID = Customer_PhoneNumber.FK_CustomerPhoneNumber
+JOIN 
+    Users ON Customer.CustomerID = Users.FK_CustomerID
+JOIN 
+    Accounts ON Customer.CustomerID = Accounts.FK_CustomerID
+LEFT JOIN
+    Transactions ON Accounts.AccountID = Transactions.FK_AccountID;
